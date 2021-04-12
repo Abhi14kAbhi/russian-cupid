@@ -2,6 +2,9 @@ import { ADD_TODO, RENDER_TODO_LIST } from '../actions';
 
 const initialState = {
   toDoList: [],
+  user: {
+    loggedIn: false,
+  },
 };
 
 export default function toDoApp(state = initialState, action) {

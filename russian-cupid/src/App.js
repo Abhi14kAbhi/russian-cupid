@@ -1,27 +1,30 @@
 // ./src/App.js
 
 import React, { Component } from 'react';
-import Container from 'react-bootstrap/Container';
 import { Row, Col } from 'react-bootstrap';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import AddToDo from './containers/AddToDo';
 import ToDoListContainer from './containers/ToDoListContainer';
+import HeaderContainer from './containers/HeaderContainer';
 import Navigation from './components/Navigation';
 
 class App extends Component {
   render() {
     return (
-      <Container>
+      <div>
         <Row className="row">
           <Col xs={12}>
-            <h1>To Do Lists</h1>
+            <HeaderContainer />
             <Navigation />
-            <Route exact path="/new-item" component={AddToDo} />
-            <Route exact path="/" component={ToDoListContainer} />
+            <Switch>
+              <Route exact path="/new-item" component={AddToDo} />
+              <Route exact path="/" component={ToDoListContainer} />
+              <Route exact path="/register" />
+            </Switch>
           </Col>
         </Row>
-      </Container>
+      </div>
     );
   }
 }
