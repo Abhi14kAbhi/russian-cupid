@@ -7,6 +7,7 @@ import { Route, Switch } from 'react-router-dom';
 import AddToDo from './containers/AddToDo';
 import ToDoListContainer from './containers/ToDoListContainer';
 import HeaderContainer from './containers/HeaderContainer';
+import RegisterContainer from './containers/RegisterContainer';
 import Navigation from './components/Navigation';
 
 class App extends Component {
@@ -16,11 +17,11 @@ class App extends Component {
         <Row className="row">
           <Col xs={12}>
             <HeaderContainer />
-            <Navigation />
+            {/* <Navigation /> */}
             <Switch>
               <Route exact path="/new-item" component={AddToDo} />
+              <Route exact path="/register" component={RegisterContainer} />
               <Route exact path="/" component={ToDoListContainer} />
-              <Route exact path="/register" />
             </Switch>
           </Col>
         </Row>

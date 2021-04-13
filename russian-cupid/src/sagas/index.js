@@ -1,6 +1,6 @@
 import { all, call, put, takeEvery } from 'redux-saga/effects';
 import { LOAD_TODO_LIST, RENDER_TODO_LIST } from '../actions';
-import { registerUserSaga } from '../containers/RegisterContainer.js/sagas';
+import { registerUserSaga } from '../containers/RegisterContainer/sagas';
 
 export function* fetchToDoList() {
   const endpoint =
