@@ -8,7 +8,7 @@ import AddToDo from './containers/AddToDo';
 import ToDoListContainer from './containers/ToDoListContainer';
 import HeaderContainer from './containers/HeaderContainer';
 import RegisterContainer from './containers/RegisterContainer';
-import Navigation from './components/Navigation';
+// import Navigation from './components/Navigation';
 
 class App extends Component {
   render() {
