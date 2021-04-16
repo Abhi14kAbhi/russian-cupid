@@ -8,14 +8,14 @@ import greenCheck from '../../../common/images/green-check.png';
 
 const GenderSelect = () => {
   return (
-    <div>
-      <div>I'm a</div>
-      <div>
-        <div>
-          <img src={man} alt="man" />
+    <div className="genderMain">
+      <p className="genderHeader">I'm a</p>
+      <div className="genderBody">
+        <div className="genderView">
+          <img className="gender" src={man} alt="man" />
         </div>
-        <div>
-          <img src={woman} alt="woman" />
+        <div className="genderView">
+          <img className="gender" src={woman} alt="woman" />
         </div>
       </div>
     </div>

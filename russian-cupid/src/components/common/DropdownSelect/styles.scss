@@ -1,0 +1,27 @@
+@import '../../../common/styles.scss';
+@import '../../../common/colors.scss';
+
+.dropdownMain {
+  :focus {
+    border: 0px;
+    box-shadow: none;
+  }
+  :hover {
+    background-color: $light-grey;
+    color: $grey;
+  }
+}
+
+.dropdownToggle {
+  background-color: $light-grey;
+  border: 0px;
+  color: $grey;
+  padding: 10px 20px 10px 20px;
+  border-radius: 30px;
+  height: 45px;
+}
+
+.dropdownMenu {
+  min-width: 20px;
+  margin-left: 40px !important;
+}

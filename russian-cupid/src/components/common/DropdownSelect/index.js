@@ -8,9 +8,9 @@ const DropdownSelect = ({ list }) => {
     return <Dropdown.Item>{item}</Dropdown.Item>;
   });
   return (
-    <Dropdown>
-      <Dropdown.Toggle variant="success">Age</Dropdown.Toggle>
-      <Dropdown.Menu>{dropdownItems}</Dropdown.Menu>
+    <Dropdown className="dropdownMain">
+      <Dropdown.Toggle className="dropdownToggle">Age | 25</Dropdown.Toggle>
+      <Dropdown.Menu className="dropdownMenu">{dropdownItems}</Dropdown.Menu>
     </Dropdown>
   );
 };
