@@ -14,7 +14,7 @@
 }
 
 .headerRow {
-  margin: 10px 0px 20px 0px;
+  margin: 20px 0px 10px 0px;
 }
 
 .headerText {
@@ -33,4 +33,16 @@
 
 .dropdownStyle {
   margin-top: 30px;
+}
+
+.registerSuccess {
+  color: $green;
+}
+
+.registerError {
+  color: $red;
+}
+
+.registerButton {
+  margin-bottom: 20px;
 }

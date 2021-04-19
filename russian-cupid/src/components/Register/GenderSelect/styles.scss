@@ -27,3 +27,18 @@
   max-height: 30px;
   margin: 0px 10px 0px 10px;
 }
+
+.greenCheck {
+  position: absolute;
+  height: 14px;
+  width: 14px;
+  margin-left: 5px;
+}
+
+.focussedGender {
+  @extend .gender;
+}
+
+.unfocussedGender {
+  @extend .gender;
+}
