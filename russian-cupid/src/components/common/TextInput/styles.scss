@@ -1,0 +1,44 @@
+@import '../../../common/styles.scss';
+@import '../../../common/colors.scss';
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.label {
+  margin-left: 10px;
+  color: $grey;
+}
+
+.textInputView {
+  @extend .width100;
+  display: flex;
+  flex-direction: row;
+  background-color: $light-grey;
+  align-items: center;
+  padding: 5px 0px 5px 10px;
+  border-radius: 30px;
+}
+
+.svgStyle {
+  padding: 0px 0px 5px 5px;
+}
+
+.textInput {
+  @extend .width100;
+  background-color: $light-grey;
+  border: 0px;
+  border-radius: 30px;
+}
+
+.emptySpace {
+  height: 31px;
+}
+
+.errorTextInput {
+  color: $red;
+  font-size: 10px;
+  margin-left: 10px;
+}

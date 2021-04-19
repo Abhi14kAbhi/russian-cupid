@@ -1,0 +1,48 @@
+@import '../../common/styles.scss';
+@import '../../common//colors.scss';
+
+.mainContainer {
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid $black;
+  border-radius: 10px;
+  max-width: 700px;
+}
+
+.headerRow {
+  margin: 20px 0px 10px 0px;
+}
+
+.headerText {
+  font-size: x-large;
+}
+
+.genderRow {
+  @extend .width100;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: flex-start;
+  margin-left: 0px;
+}
+
+.dropdownStyle {
+  margin-top: 30px;
+}
+
+.registerSuccess {
+  color: $green;
+}
+
+.registerError {
+  color: $red;
+}
+
+.registerButton {
+  margin-bottom: 20px;
+}
