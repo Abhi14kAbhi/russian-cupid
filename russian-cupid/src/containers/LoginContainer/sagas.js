@@ -9,6 +9,7 @@ function* loginUser(action) {
   try {
     const { data } = action;
     const userData = yield call(service.loginUser, data);
+    localStorage.setItem('token', userData.data.token);
     yield put(actions.userLoggedIn(userData));
   } catch (error) {
     yield put(actions.userLoginFailed(error.response.data));

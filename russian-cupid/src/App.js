@@ -23,6 +23,7 @@ class App extends Component {
               <Route exact path="/new-item" component={AddToDo} />
               <Route exact path="/register" component={RegisterContainer} />
               <Route exact path="/login" component={LoginContainer} />
+              <Route exact path="/home" component={RegisterContainer} />
               <Route exact path="/" component={ToDoListContainer} />
             </Switch>
           </Col>

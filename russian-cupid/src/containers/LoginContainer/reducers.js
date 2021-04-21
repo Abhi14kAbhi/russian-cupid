@@ -8,7 +8,7 @@ const initialState = {
 export const loginReducer = (state = initialState, action) => {
   switch (action.type) {
     case USER_LOGGED_IN:
-      return { ...state, userData: action.data };
+      return { ...state, userData: action.data.data.user };
     case LOGIN_USER_FAILED:
       return { ...state, error: action.errorObj };
     default:
