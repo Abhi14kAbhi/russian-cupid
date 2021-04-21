@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Container, Button, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import TextInput from '../common/TextInput';
 import DropdownSelect from '../common/DropdownSelect';
 import './styles.scss';
@@ -176,6 +177,9 @@ const Register = ({ registerUser, userRegistered, errorObj }) => {
       <Button className="registerButton" onClick={() => onSubmit(user)}>
         Submit
       </Button>
+      <p>
+        Already have an account <Link to="/login">Login</Link>
+      </p>
     </Container>
   );
 };

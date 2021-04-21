@@ -1,0 +1,27 @@
+@import '../../common/styles.scss';
+@import '../../common/colors.scss';
+
+.loginContainer {
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid $black;
+  border-radius: 10px;
+  max-width: 300px;
+}
+
+.headerLoginRow {
+  margin: 20px 0px 10px 0px;
+}
+
+.headerLoginText {
+  font-size: x-large;
+}
+
+.loginError {
+  font-size: x-small;
+  color: $red;
+}
