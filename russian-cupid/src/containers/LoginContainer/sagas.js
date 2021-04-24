@@ -8,8 +8,13 @@ import * as actions from './actions';
 function* loginUser(action) {
   try {
     const { data } = action;
-    const userData = yield call(service.loginUser, data);
-    localStorage.setItem('token', userData.data.token);
+    const userData = yield call(
+      service.api,
+      '/user/login',
+      'post',
+      false,
+      data
+    );
     yield put(actions.userLoggedIn(userData));
   } catch (error) {
     yield put(actions.userLoginFailed(error.response.data));

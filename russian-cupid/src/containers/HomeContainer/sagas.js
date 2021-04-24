@@ -1,44 +1,62 @@
-import { takeEvery, call, put, all, take } from 'redux-saga/effects';
+import { takeEvery, call, put, all } from 'redux-saga/effects';
 
 import * as types from './actionTypes';
 import * as service from '../../service';
 import * as actions from './actions';
 
 // Workers
-function* getUserDetails(action) {
+function* getUserDetails() {
   try {
-    // const userData = yield call(service.getUserDetails);
-    // yield put(actions.userDetailsReceived(userData));
+    const userData = yield call(
+      service.api,
+      '/user/get-user',
+      'get',
+      true,
+      null
+    );
+    yield put(actions.userDetailsReceived(userData));
   } catch (error) {
     console.log(error);
     // yield put(actions.userLoginFailed(error.response.data));
   }
 }
 
-function* getHeader(action) {
+function* getHeader() {
   try {
-    // const header = yield call(service.getHeader);
-    // yield put(actions.headerReceived(header));
+    const header = yield call(service.api, '/user/header', 'get', true, null);
+    yield put(actions.headerReceived(header));
   } catch (error) {
     console.log(error);
     // yield put(actions.userLoginFailed(error.response.data));
   }
 }
 
-function* getCountries(action) {
+function* getCountries() {
   try {
-    // const countries = yield call(service.getCountries);
-    // yield put(actions.countriesReceived(countries));
+    const countries = yield call(
+      service.api,
+      '/user/get-countries?target=country',
+      'get',
+      true,
+      null
+    );
+    yield put(actions.countriesReceived(countries));
   } catch (error) {
     console.log(error);
     // yield put(actions.userLoginFailed(error.response.data));
   }
 }
 
-function* getProfiles(action) {
+function* getProfiles() {
   try {
-    // const profiles = yield call(service.getProfiles);
-    // yield put(actions.getProfiles(profiles));
+    const profiles = yield call(
+      service.api,
+      '/user/get-profiles?partnerGender=FEMALE&sort=NEWEST_FIRST&gender=MALE&offset=0',
+      'get',
+      true,
+      null
+    );
+    yield put(actions.getProfiles(profiles));
   } catch (error) {
     console.log(error);
     // yield put(actions.userLoginFailed(error.response.data));

@@ -2,11 +2,15 @@ import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import './styles.scss';
 import { Row, Container, Col, Button } from 'react-bootstrap';
+import HeaderContainer from '../../containers/HeaderContainer';
 import TextInput from '../common/TextInput';
 
 const Login = ({ loginUser, userData, errorObj }) => {
   const history = useHistory();
-  const [user, setUser] = useState({ email: '', password: '' });
+  const [user, setUser] = useState({
+    email: 'abhishah0701@gmail.com',
+    password: 'Click@123',
+  });
   const [error, setError] = useState({ email: '', password: '' });
   const onChange = (key, value) => {
     setUser({ ...user, [key]: value });
@@ -39,43 +43,50 @@ const Login = ({ loginUser, userData, errorObj }) => {
     }
   };
   if (userData !== null) {
-    history.push('/home');
+    history.push('/');
   }
   return (
-    <Container className="loginContainer">
-      <Row className="headerLoginRow">
-        <Col className="headerLoginText">Login</Col>
-      </Row>
-      <Row>
-        <TextInput
-          label="Email Id"
-          placeholder="Email Id"
-          type="text"
-          onChange={onChange}
-          keyName="email"
-          value={user.email}
-          error={error.email}
-        />
-      </Row>
-      <Row>
-        <TextInput
-          label="Password"
-          placeholder="Password"
-          type="password"
-          onChange={onChange}
-          keyName="password"
-          value={user.password}
-          error={error.password}
-        />
-      </Row>
-      {errorObj ? <p className="loginError">{errorObj.description}</p> : <p />}
-      <Button className="loginButton" onClick={() => onSubmit(user)}>
-        Submit
-      </Button>
-      <p>
-        Create a new account <Link to="/register">Register</Link>
-      </p>
-    </Container>
+    <div>
+      <HeaderContainer />
+      <Container className="loginContainer">
+        <Row className="headerLoginRow">
+          <Col className="headerLoginText">Login</Col>
+        </Row>
+        <Row>
+          <TextInput
+            label="Email Id"
+            placeholder="Email Id"
+            type="text"
+            onChange={onChange}
+            keyName="email"
+            value={user.email}
+            error={error.email}
+          />
+        </Row>
+        <Row>
+          <TextInput
+            label="Password"
+            placeholder="Password"
+            type="password"
+            onChange={onChange}
+            keyName="password"
+            value={user.password}
+            error={error.password}
+          />
+        </Row>
+        {errorObj ? (
+          <p className="loginError">{errorObj.description}</p>
+        ) : (
+          <p />
+        )}
+        <Button className="loginButton" onClick={() => onSubmit(user)}>
+          Submit
+        </Button>
+        <p>
+          Create a new account <Link to="/register">Register</Link>
+        </p>
+      </Container>
+    </div>
   );
 };
 

@@ -8,7 +8,13 @@ import * as actions from './actions';
 function* registerUser(action) {
   try {
     const { data } = action;
-    const userData = yield call(service.registerUser, data);
+    const userData = yield call(
+      service.api,
+      '/user/register',
+      'post',
+      false,
+      data
+    );
     yield put(actions.userRegistered(userData));
   } catch (error) {
     yield put(actions.registerUserFailed(error.response.data));
