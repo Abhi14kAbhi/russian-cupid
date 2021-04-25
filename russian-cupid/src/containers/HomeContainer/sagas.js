@@ -56,7 +56,7 @@ function* getProfiles() {
       true,
       null
     );
-    yield put(actions.getProfiles(profiles));
+    yield put(actions.profilesReceived(profiles));
   } catch (error) {
     console.log(error);
     // yield put(actions.userLoginFailed(error.response.data));
@@ -83,8 +83,8 @@ function* watchGetProfiles() {
 export function* homeSaga() {
   yield all([
     watchGetUserDetails(),
-    watchGetHeader,
-    watchGetCountries,
-    watchGetProfiles,
+    watchGetHeader(),
+    watchGetCountries(),
+    watchGetProfiles(),
   ]);
 }

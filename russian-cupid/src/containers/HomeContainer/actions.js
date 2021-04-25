@@ -9,7 +9,7 @@ export const getUserDetails = () => {
 export const userDetailsReceived = (data) => {
   return {
     type: types.USER_DETAILS_RECEIVED,
-    data,
+    userData: data,
   };
 };
 
@@ -22,7 +22,7 @@ export const getHeader = () => {
 export const headerReceived = (data) => {
   return {
     type: types.HEADER_RECEIVED,
-    data,
+    header: data,
   };
 };
 
@@ -35,7 +35,7 @@ export const getCountries = () => {
 export const countriesReceived = (data) => {
   return {
     type: types.COUNTRIES_RECEIVED,
-    data,
+    countries: data,
   };
 };
 
@@ -48,6 +48,6 @@ export const getProfiles = () => {
 export const profilesReceived = (data) => {
   return {
     type: types.PROFILES_RECEIVED,
-    data,
+    profiles: data,
   };
 };
